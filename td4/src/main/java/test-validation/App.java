@@ -1,4 +1,4 @@
-package testValidation;
+package testvalidation;
 
 /**
  * Hello world!

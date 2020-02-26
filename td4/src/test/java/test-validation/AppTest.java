@@ -1,4 +1,4 @@
-package testValidation;
+package testvalidation;
 
 import static org.junit.Assert.assertTrue;
 

@@ -1,0 +1,4 @@
+.vscode/settings.json
+td4/.project
+td4/target/classes/test-validation/App.class
+td4/target/test-classes/test-validation/AppTest.class
