@@ -2,3 +2,5 @@
 td4/.project
 td4/target/classes/test-validation/App.class
 td4/target/test-classes/test-validation/AppTest.class
+td4/target/classes/testvalidation/App.class
+td4/target/test-classes/testvalidation/AppTest.class
