@@ -1,10 +1,9 @@
 package testvalidation;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertTrue;
-
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 
 public class AppTest 
@@ -19,40 +18,31 @@ public class AppTest
 
     @Test
     public void testPositif(){
-        int[] test = {4, 4, 4, 4, 4, 5, 5, 5, 5, 5};
+        int[] test = {4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5};
         assertArrayEquals(test, a.racineCarrees(20, 30));
     }
 
     @Test
     public void testNbrNegatif(){
         try {
-            a.racineCarrees(-5, -1);
-            assertTrue(false);
+            int[] test = a.racineCarrees(-5, -1);
+            assertNull(test);
         }
         catch (Exception e){
-            assertTrue(true);
+            assertTrue(false);
         }
     }
+
 
     @Test
     public void testAplusgrandqueB(){
         try {
-            a.racineCarrees(5, 1);
-            assertTrue(false);
+            int[] test = a.racineCarrees(5, 1);
+            assertNull(test);
         }
         catch (Exception e){
-            assertTrue(true);
+            assertTrue(false);
         }
     }
-
-
-
-
-
-
-
-
-
-
 
 }
