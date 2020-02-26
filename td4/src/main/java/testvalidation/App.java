@@ -10,7 +10,8 @@ public class App {
             System.out.println(tab[i] + "\n");
         }
          */
-        genererMatrice(10, 10, 0, 0);
+        //genererMatrice(10, 10, 0, 0);
+        triangle(14, 7, 7);
     }
 
     public static int[] racineCarrees(int a, int b) {// calcule les racines carrees des nombres de A a B
@@ -88,6 +89,71 @@ public class App {
             System.out.println("");
         }
         return matrice;
+    }
+
+    public static int triangle(int a, int b, int c){
+
+        //Diverses vérifications pour éviter des bugs
+        try {
+            if (a < 0) {
+                throw new Exception("A ne peux pas être inférieur à 0");
+            }
+            if (b < 0) {
+                throw new Exception("B ne peux pas être inférieur à 0");
+            }
+            if (c < 0) {
+                throw new Exception("C ne peux pas être inférieur à 0");
+            }
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+            return -1;
+        }
+
+        //Si A est plus grand que B et C réunis
+        if (a >= b && a >= c){
+            if (a > b + c){
+                System.out.println("Ce n'est pas un triangle");
+                return 4;
+            }
+        }
+
+        //Si B est plus grand que A et C réunis
+        if (b >= a && b >= c){
+            if (b > a + c){
+                System.out.println("Ce n'est pas un triangle");
+                return 4;
+            }
+        }
+
+        //Si C est plus grand que A et B réunis
+        if (c >= a && c >= b){
+            if (c > b + a){
+                System.out.println("Ce n'est pas un triangle");
+                return 4;
+            }
+
+        }
+
+        //Si les trois côtés sont différents
+        if (a != b && b != c && a != c){
+            System.out.println("Triangle scalène");
+            return 3;
+        }
+
+        //Si les trois côtés sont les mêmes
+        if (a == b && b == c){
+            System.out.println("Triangle équilatéral");
+            return 2;
+        }
+
+        //Si deux côtés sont les mêmes, peu importe lesquelles
+        if (a == c || b == c){
+            System.out.println("Triangle isocèle");
+            return 1;
+        }
+
+        return 0;
     }
 
 }
