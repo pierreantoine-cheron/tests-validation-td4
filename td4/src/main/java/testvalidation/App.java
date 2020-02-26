@@ -19,6 +19,13 @@ public class App
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+        try {
+            if (a<0 && b<0) {
+                throw new Exception("A & Bmust be > 0");//renvoie une exception si b > a
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
         int[] tab = new int[b-a];
         for (int i = a; i < b; i++) {
             tab[i-a] = (int)Math.sqrt(i);
