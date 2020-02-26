@@ -4,8 +4,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
-        int [] tab= racineCarrees(10, 15);
+        int [] tab= racineCarrees(15, 17);
         for (int i = 0; i < tab.length; i++) {
             System.out.println(tab[i]+"\n");
         }
@@ -20,14 +19,14 @@ public class App
             System.out.println(e.getMessage());
         }
         try {
-            if (a<0 && b<0) {
+            if (a<0 || b<0) {
                 throw new Exception("A & Bmust be > 0");//renvoie une exception si b > a
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        int[] tab = new int[b-a];
-        for (int i = a; i < b; i++) {
+        int[] tab = new int[b-a+1];
+        for (int i = a; i <= b; i++) {
             tab[i-a] = (int)Math.sqrt(i);
         }
         return tab;
