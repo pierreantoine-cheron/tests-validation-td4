@@ -43,7 +43,7 @@ public class Robot extends Moveable {
                 result = result + ((Robot) fo).cargoWeight();
             }
             result = result + fo.weight;
-            System.out.println(result);
+            //System.out.println(result);
         }
         return result;
     }
@@ -54,13 +54,10 @@ public class Robot extends Moveable {
      * @param o  Objet à prendre
      */
     public void lift(FieldObject o) {
-        if (maxLoad > 0){
             if (Math.abs((o.x + o.y) - (this.x + this.y)) <= 1){
                 cargo.add(o);
                 o.lifted = true;
-                maxLoad--;
-            }
-
+                maxLoad = maxLoad - o.getWeight();
         }
     }
 
@@ -70,13 +67,14 @@ public class Robot extends Moveable {
      * @param o  Objet à déposer
      */
     public void dropOff(FieldObject o) {
-
-        if (!cargo.isEmpty()){
-            if (cargo.remove(o)){
-                maxLoad++;
-                o.lifted = false;
-                o.x = this.x;
-                o.y = this.y;
+        if (!this.lifted) {
+            if (!cargo.isEmpty()) {
+                if (cargo.remove(o)) {
+                    maxLoad = maxLoad + o.getWeight();
+                    o.lifted = false;
+                    o.x = this.x;
+                    o.y = this.y;
+                }
             }
         }
     }
@@ -84,5 +82,14 @@ public class Robot extends Moveable {
     @Override
     public int getWeight() {
         return weight + cargoWeight();
+    }
+
+    @Override
+    public void goTo(double x, double y) {
+        if (maxLoad >= 0){
+            if (lifted == false){
+                super.goTo(x, y);
+            }
+        }
     }
 }
