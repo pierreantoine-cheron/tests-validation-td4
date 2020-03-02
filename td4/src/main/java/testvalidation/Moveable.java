@@ -1,4 +1,4 @@
-import static java.lang.Math.*;
+package testvalidation;
 
 /**
  * Les objets mobiles.
@@ -8,7 +8,7 @@ public class Moveable extends FieldObject {
     /**
      * Niveau de carburant.
      */
-    protected double fuel;
+     public double fuel;
 
     /**
      * Constructeur.
@@ -20,7 +20,7 @@ public class Moveable extends FieldObject {
      */
     public Moveable(Field f, int w, double x, double y) {
 	super(f, w, x, y);
-	// À compléter.
+	this.fuel = 10;
     }
 
     /**
@@ -31,8 +31,8 @@ public class Moveable extends FieldObject {
      * @return Distance
      */
     protected double dist(double x, double y) {
-	// À compléter.
-	return 0;
+        double distance = Math.sqrt( Math.pow((x - super.x), 2) + Math.pow((y - super.y), 2));
+        return distance;
     }
 
     /**
@@ -42,7 +42,18 @@ public class Moveable extends FieldObject {
      * @param y  Ordonnée cible
      */
     public void goTo(double x, double y) {
-	// À compléter.
+        if (x > 10){
+            x = 10;
+        }
+        if (y >= 10){
+            y = 8;
+        }
+        this.fuel = this.fuel - dist(x, y);
+
+        if (this.fuel >= 0){
+            this.unsafeSetPosition(x, y);
+        }
+
     }
 
 }

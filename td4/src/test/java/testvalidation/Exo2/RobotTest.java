@@ -1,5 +1,10 @@
+package testvalidation.Exo2;
+
 import static org.junit.Assert.*;
 import org.junit.*;
+import testvalidation.Field;
+import testvalidation.FieldObject;
+import testvalidation.Robot;
 
 public class RobotTest {
 

@@ -11,7 +11,7 @@ public class App {
         }
          */
         //genererMatrice(10, 10, 0, 0);
-        triangle(14, 7, 7);
+        //triangle(14, 7, 7);
     }
 
     public static int[] racineCarrees(int a, int b) {// calcule les racines carrees des nombres de A a B
@@ -155,5 +155,7 @@ public class App {
 
         return 0;
     }
+
+
 
 }

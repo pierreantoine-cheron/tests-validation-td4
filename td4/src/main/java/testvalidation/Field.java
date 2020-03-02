@@ -1,3 +1,5 @@
+package testvalidation;
+
 import static java.lang.Math.*;
 
 /**
@@ -9,7 +11,7 @@ public class Field {
     /**
      * Hauteur et largeur du terrain.
      */
-    protected int heigth, width;
+    public int heigth, width;
 
     /**
      * Construction d'un terrain de dimensions données.
@@ -18,7 +20,14 @@ public class Field {
      * @param w  Largeur du terrain
      */
     public Field(int h, int w) {
-	// À compléter.
+        if (h <= 0){
+            h = 1;
+        }
+        if (w <= 0){
+            w = 1;
+        }
+        heigth = h;
+        width = w;
     }
 
     /**
@@ -28,8 +37,13 @@ public class Field {
      * @return Abscisse normalisée
      */
     public double normalizeX(double x) {
-	// À compléter.
-	return 0;
+        if (x > width){
+            x = width;
+        }
+        if (x <= 0){
+            x = 0;
+        }
+        return x;
     }
 
     /**
@@ -39,8 +53,13 @@ public class Field {
      * @return Ordonnée normalisée
      */
     public double normalizeY(double y) {
-	// À compléter.
-	return 0;
+        if (y > heigth){
+            y = heigth;
+        }
+        if (y <= 0){
+            y = 0;
+        }
+        return y;
     }
 
 }

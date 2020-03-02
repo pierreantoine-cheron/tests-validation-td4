@@ -1,5 +1,7 @@
 import static org.junit.Assert.*;
 import org.junit.*;
+import testvalidation.Field;
+import testvalidation.Moveable;
 
 public class MoveableTest {
 
@@ -169,5 +171,7 @@ public class MoveableTest {
 	assertEquals(8, r2d2.y, 0.0);
 	assertEquals(0, r2d2.fuel, 0.0);
     }
+
+
 
 }

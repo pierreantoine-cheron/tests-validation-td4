@@ -1,4 +1,4 @@
-import static java.lang.Math.*;
+package testvalidation;
 
 /**
  * Tous les objets.
@@ -9,10 +9,10 @@ public class FieldObject {
      * Les objets sont caractérisés par un poids et des coordonnées.
      * Ils appartiennent à un terrain, et peuvent être portés ou non.
      */
-    protected Field field;
-    protected int weight;
-    protected double x, y;
-    protected boolean lifted;
+    public Field field;
+    public int weight;
+    public double x, y;
+    public boolean lifted;
 
     /**
      * Constructeur.
@@ -23,7 +23,27 @@ public class FieldObject {
      * @param y  Ordonnée
      */
     public FieldObject(Field f, int w, double x, double y) {
-	// À compléter.
+        if (w <= 0){
+            w = 1;
+        }
+        if (x <= 0){
+            x = 0;
+        }
+        if (y <=0){
+            y = 0;
+        }
+
+        if (x >= 10){
+            x = 10;
+        }
+        if (y >= 8){
+            y = 8;
+        }
+
+        field = f;
+        weight = w;
+        this.x = x;
+        this.y = y;
     }
 
     /**
@@ -32,8 +52,7 @@ public class FieldObject {
      * @return Poids
      */
     public int getWeight() {
-	// À compléter.
-	return 0;
+        return weight;
     }
 
     /**
@@ -43,7 +62,8 @@ public class FieldObject {
      * @param y  Ordonnée
      */
     public void unsafeSetPosition(double x, double y) {
-	// À compléter.
+        this.x = x;
+        this.y = y;
     }
 
 }

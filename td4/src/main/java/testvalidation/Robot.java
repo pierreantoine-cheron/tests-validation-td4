@@ -1,4 +1,5 @@
-import static java.lang.Math.*;
+package testvalidation;
+
 import java.util.ArrayList;
 
 /**
@@ -9,8 +10,8 @@ public class Robot extends Moveable {
     /**
      * Charge maximale et objets transportés.
      */
-    protected int maxLoad;
-    protected ArrayList<FieldObject> cargo;
+    public int maxLoad;
+    public ArrayList<FieldObject> cargo;
 
     /**
      * Constructeur.
@@ -23,7 +24,11 @@ public class Robot extends Moveable {
      */
     public Robot(Field f, int w, double x, double y, int l) {
 	super(f, w, x, y);
-	// À compléter.
+	if (l <= 0){
+	    l = 0;
+    }
+	this.maxLoad = l;
+
     }
     
     /**
@@ -42,7 +47,7 @@ public class Robot extends Moveable {
      * @param o  Objet à prendre
      */
     public void lift(FieldObject o) {
-	// À compléter.
+
     }
 
     /**

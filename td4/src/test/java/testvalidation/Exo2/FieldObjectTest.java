@@ -1,10 +1,12 @@
 import static org.junit.Assert.*;
 import org.junit.*;
+import testvalidation.Field;
+import testvalidation.FieldObject;
 
 public class FieldObjectTest {
 
-    Field f;
-    FieldObject o;
+    public Field f;
+    public FieldObject o;
 
     @Before
     public void initField() {
